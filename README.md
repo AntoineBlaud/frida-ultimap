@@ -18,6 +18,8 @@ Frida Ultimap is a Python script that uses Frida to list all function calls of a
 
 2. Run the script with the --platform argument to specify which platform you want to use
 
+    python frida-ultimap/ultimap.py --platform windows
+
 3. A small configuration will be saved the first time the script is run, which can be loaded to avoid filling in some variables.
 
 4. Follow the prompts to configure the script. 
