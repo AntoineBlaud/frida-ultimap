@@ -2,10 +2,14 @@ import contextlib
 import idc
 import re
 import idaapi
-# export functions addresses and names to a file
 
 
-# calling convention
+# MUST have IDA Pro opened with the binary you want to export functions
+
+output = ""
+if not output:
+    raise Exception("You must set the output file path")
+
 class calling_convention:
     fastcall = 112
     nothing = 16
@@ -22,7 +26,7 @@ def check_calling_conv(ea):
     tinfo.get_func_details(funcdata)
     print(funcdata.cc, idc.get_func_name (ea))
     # NOTICE: here you can add other calling convention
-    return funcdata.cc == calling_convention.fastcall
+    return funcdata.cc == calling_convention.fastcall or funcdata.cc == calling_convention.cdecl
 
 
 def validate(ea, n):
@@ -48,7 +52,7 @@ funcs = [f for n,f in enumerate(funcs) if validate(f.start_ea, n)]
 funcs_ea_nameDict = {f.start_ea:idc.get_func_name (f.start_ea) for f in funcs}
 
 # NOTICE: set the path to the file you want to export
-with open("", "w") as f:
+with open(output, "w") as f:
     for ea, name in funcs_ea_nameDict.items():
         # check function name 
         f.write(f"{hex(ea)} {name}\n")

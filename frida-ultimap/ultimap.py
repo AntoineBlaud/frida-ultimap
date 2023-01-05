@@ -55,7 +55,7 @@ while True:
     # ask the user for the trace description
     traceDescription = input("[>] Name the current record : ")
     askdump = input(
-        "[>] Number of times to dump strings (default 20) : "
+        "[NOTICE] Number of times to dump strings (default 20). \n[NOTICE] Set 0 to improve performances.\n[>]Number of times  : "
     )
     # build dictionary of variables that must be replaced in the script
     TIMETODUMPSTRING = "20" if askdump == "" else askdump

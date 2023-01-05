@@ -81,10 +81,15 @@ def find_process(processname, isdesktop):
     if isdesktop:
         session, pid = attach_to_process(processname)
     else:
-        device = frida.get_usb_device()
-        realprocessname = input(
-            "[>] Enter (running process name) or (path) or (application bundle name) , ex: com.supercell.clashofclans: ")
-        session, pid = attach_to_remote_process(device, realprocessname)
+        try:
+            device = frida.get_usb_device()
+            realprocessname = input(
+                "[>] Enter (running process name) or (path) or (application bundle name) , ex: com.supercell.clashofclans: ")
+            session, pid = attach_to_remote_process(device, realprocessname)
+        except Exception as e:
+            print("[ERROR] No device found, check your USB/ADB connection", e)
+            sys.exit(1)
+            
 
     return session, pid
 
@@ -154,11 +159,15 @@ def attach_script(script, pid, session):
     frida_script = session.create_script(script)
     frida_script.load()
     with contextlib.suppress(Exception):
+        device = frida.get_usb_device()
         device.resume(pid)
+        print("[INFO] Process resumed")
     # resume process if it has been spwaned
     with contextlib.suppress(Exception):
         device = frida.get_local_device()
         device.resume(pid)
+        print("[INFO] Process resumed")
+
 
 
 def capture_results(delaytowait, backup_stdout, metadatafolder, processname, timeout, outfile):
