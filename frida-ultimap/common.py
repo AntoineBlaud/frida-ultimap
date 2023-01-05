@@ -6,6 +6,7 @@ from collections import OrderedDict
 import frida
 import sys
 import time
+import os 
 
 def find_pid_by_name(name):
     pid = next(
