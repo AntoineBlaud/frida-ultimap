@@ -27,6 +27,8 @@ Frida Ultimap is a Python script that uses Frida to list all function calls of a
 5. Timeout must be greater than 2000
 
 6. Set the "dump string" value to 0 to improve tracing performance.
+
+The frida script is written inside the metadata directory
     
 
 
