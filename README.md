@@ -31,8 +31,8 @@ Frida Ultimap is a Python script that uses Frida to list all function calls of a
 
 ## TODO
 
-    Fix the android bug if nobody does it (hard)
-    write a small tool to diff saved trace (intersection, only in <trace>, etc ...) (easy)
+- Fix the android bug if nobody does it (hard)
+- write a small tool to diff saved trace (intersection, only in <trace>, etc ...) (easy)
 
 
 
