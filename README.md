@@ -35,7 +35,7 @@ The frida script is written inside the metadata directory
 
 ## TODO
 
-- Fix the Android bug if it has not been fixed already (difficulty: hard)
+- Fix the Android [bug](https://github.com/frida/frida/issues/2376) if it has not been fixed already (difficulty: hard)
 - Write a tool to compare saved traces (e.g. intersection, only in <trace>, etc.) (difficulty: easy)
 
 
