@@ -44,9 +44,9 @@ The frida script is written inside the metadata directory
 
 1. There is an issue with Android where function hooking causes a crash. See this [issue](https://github.com/frida/frida/issues/2376) for more information.
 
-2. If process is spawn it must live at least 10 secondes
+2. If the process is spawned, it must be running for at least 10 seconds.
 
-3. Library backtrace is not great, so the script just printing the library function name
+3. Library backtraces are not reliable, so the script only prints the library function name
 
 4. Scripts are written in JavaScript, which leads to a loss of performance compared to native gum-js
 
