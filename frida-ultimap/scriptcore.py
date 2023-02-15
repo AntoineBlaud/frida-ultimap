@@ -123,12 +123,18 @@ function addHook(ea, name) {
           for (var i = 0; i < register_args.length; i++) {
             if (this.context[register_args[i]] != null) {
               try {
-                var str = this.context[register_args[i]].readPointer()
-                  .readUtf8String();
-                if (str.length > 4) {
+                var ptr = this.context[register_args[i]];
+                try {
+                  var test_ptr = new NativePointer(this.context[register_args[i]].readPointer()).readPointer();
+                  ptr = new NativePointer(this.context[register_args[i]].readPointer());
+                }catch (error) {
+                }
+                var str = ptr.readUtf8String();
+                if (str.length > 3) {
                   console.log("Found string inside " + name + " at " + register_args[i] + " : " + str);
                 }
-              } catch (error) {}
+              } catch (error) {
+              }
             }
           }
         }
