@@ -84,6 +84,7 @@ def find_process(processname, isdesktop):
     else:
         try:
             device = frida.get_usb_device()
+            pprint.pprint(device.enumerate_processes())
             realprocessname = input(
                 "[>] Enter (running process name) or (path) or (application bundle name) , ex: com.supercell.clashofclans: ")
             session, pid = attach_to_remote_process(device, realprocessname)
