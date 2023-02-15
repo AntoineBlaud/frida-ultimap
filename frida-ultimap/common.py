@@ -196,7 +196,7 @@ def load_config(config_file):
     return processname, filename, exportedbase
 
 def get_config_from_user():
-    processname = input("[>] Enter process name (or native lib name for mobile) : ")
-    filename = input("[>] Enter filename of exported functions: ")
+    processname = input("[>] Enter the exact process name (or native lib name for mobile). Ex libnative.so : ")
+    filename = input("[>] Enter the exact filename of exported functions: ")
     exportedbase = input("[>] Enter base address of exported functions as hex : ")
     return processname, filename, exportedbase
