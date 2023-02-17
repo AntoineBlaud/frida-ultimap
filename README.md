@@ -41,6 +41,7 @@ Frida Ultimap is a Python script that uses Frida to list all function calls of a
 
 While the issue is still being resolved, I have found a solution for Android users. However, it requires Windows 11. 
 Please follow the [installation](https://forum.xda-developers.com/t/wsa-build-2211-based-on-android-13-with-magisk-root-and-google-play-store.4535473/) instructions provided and then install the APK and Frida. Once completed, you should be able to use Frida without encountering any crashes due to the x64-x86 architecture.
+[Update] It seems to work with Frida 16.0.10 on arm64, at least.
 
 
 
