@@ -1,3 +1,11 @@
+---
+
+⚠️ **Important Note:** ⚠️
+
+**Notice:** This project is deprecated and no longer actively maintained. For a more comprehensive and feature-rich alternative, we recommend checking out [The Codex Rebirth](https://github.com/AntoineBlaud/TheCodexRebirth), which includes Ultimap functionality and provides a more advanced and up-to-date solution. We encourage you to migrate to The Codex Rebirth for better performance and a wider range of features.
+
+---
+
 # Frida Ultimap
 
 Frida Ultimap is a Python script that uses Frida to list all function calls of a process, including those that are not exported. It can also dump strings that appear in function arguments.
